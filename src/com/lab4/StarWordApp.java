@@ -16,7 +16,7 @@ public class StarWordApp {
 		
 		//input 
 		do {
-		word = new String();
+		word = "";
 		System.out.println("Please enter a word: ");
 		word = sc.nextLine();
 		word = word.toLowerCase();
@@ -28,23 +28,23 @@ public class StarWordApp {
 		
 		//process
 		switch(method){
-		case 1:
-			myStarWord.computeVowels();
-		break;
-		case 2:
-			myStarWord.computeStars();
-		break;
-		case 3:
-			myStarWord.computePigLatin();
-		break;
-		case 4:
-			myStarWord.reverseWord();
-		break;
-		default:
-			System.out.println("Wrong input!");
-		break;
-		}//end switch
+			case 1:
+				myStarWord.computeVowels();
+			break;
+			case 2:
+				myStarWord.computeStars();
+			break;
+			case 3:
+				myStarWord.computePigLatin();
+			break;
+			case 4:
+				myStarWord.reverseWord();
+			break;
+			default:
+			System.out.println("Please enter one of the numbers suggesteds");
+			}//end switch
 		}while(method !=1 && method != 2 && method !=3 && method != 4);
+		
 		//output
 		String startteWord = myStarWord.getWord();
 		//"The word: " +word + with STARTED compute method is + startteWord
@@ -53,7 +53,7 @@ public class StarWordApp {
 		System.out.println("Do you wish to continue? y/n");
 		answer = sc.next();
 		answer = answer.toLowerCase();
-		}while(!answer.equals("n"));
+		}while(answer !="y");
 		
 	}//end main
 }//end class
