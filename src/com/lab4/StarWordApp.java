@@ -5,9 +5,9 @@ public class StarWordApp {
 
 	public static void main(String[] args) {
 		//declare local variables
-		String word;
+		String word, startteWord;
 		int method;
-		String answer = "";
+		char answer = ' ';
 		
 		
 		//declare objects
@@ -18,7 +18,7 @@ public class StarWordApp {
 		do {
 		word = "";
 		System.out.println("Please enter a word: ");
-		word = sc.nextLine();
+		word = sc.next();
 		word = word.toLowerCase();
 		myStarWord.setWord(word);
 		
@@ -41,19 +41,18 @@ public class StarWordApp {
 				myStarWord.reverseWord();
 			break;
 			default:
-			System.out.println("Please enter one of the numbers suggesteds");
+			System.out.println("Please enter one of the numbers suggested");
 			}//end switch
 		}while(method !=1 && method != 2 && method !=3 && method != 4);
 		
 		//output
-		String startteWord = myStarWord.getWord();
+		startteWord = myStarWord.getWord();
 		//"The word: " +word + with STARTED compute method is + startteWord
 		System.out.println("The word: " + word + " with "+ method + " method is " + startteWord);
 		
 		System.out.println("Do you wish to continue? y/n");
-		answer = sc.next();
-		answer = answer.toLowerCase();
-		}while(answer !="y");
+		answer = sc.next().charAt(0);
+		}while(answer =='y');
 		
 	}//end main
 }//end class
